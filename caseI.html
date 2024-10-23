@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        section{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        section>div{
+            width: 100px;
+            height: 100px;
+            background-color: #207cca;
+            text-align: center;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+<section>
+    <div>
+        <h1 id="1">A</h1>
+    </div>
+    <div>
+        <h1 id="2">B</h1>
+    </div>
+    <div>
+        <h1 id="3">C</h1>
+    </div>
+    <div>
+        <h1 id="4">D</h1>
+    </div>
+    <div>
+        <h1 id="5">E</h1>
+    </div>
+    <div>
+        <h1 id="6">F</h1>
+    </div>
+</section>
+
+
+<script>
+
+let array1=["A","B","C","D","E","F"]
+
+    setInterval(() => {
+
+        let last_value=array1.pop();
+        array1.unshift(last_value);
+       console.log(array1);
+
+            document.getElementById("1").innerText=array1[0];
+            document.getElementById("2").innerText=array1[1];
+            document.getElementById("3").innerText=array1[2];
+            document.getElementById("4").innerText=array1[3];
+            document.getElementById("5").innerText=array1[4];
+            document.getElementById("6").innerText=array1[5];
+
+
+    },3000);
+
+</script>
+</body>
+</html>

@@ -1,10 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Centered Layout</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2d2f34;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .queue-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .queue {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #3c434a;
+            border-radius: 10px;
+            min-width: 400px;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        #red {
+            background-color: red;
+            margin-top: -182px;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #pink {
+            background-color: pink;
+            margin-bottom: -188px;
+        }
+
+        #purple{
+            background-color: purple;
+
+        }
+
+    </style>
 </head>
 <body>
-$END$
+<div class="queue-container">
+
+    <div class="queue">
+        <div  id="red" class="box"></div>
+        <div id="green" class="box"></div>
+        <div id="blue" class="box"></div>
+        <div id="yellow" class="box"></div>
+        <div id="purple" class="box"></div>
+        <div id="pink" class="box"></div>
+    </div>
+
+
+</div>
+<script>
+    let array1=["red","green","blue","yellow","purple","pink"]
+
+    const boxes=document.querySelectorAll(".box")
+
+    console.log(boxes)
+
+    setInterval(() =>{
+        let last=array1.pop();
+        array1.unshift(last);
+
+        document.getElementById("red").style.backgroundColor=array1[0];
+        document.getElementById("green").style.backgroundColor=array1[1];
+        document.getElementById("blue").style.backgroundColor=array1[2];
+        document.getElementById("yellow").style.backgroundColor=array1[3];
+        document.getElementById("purple").style.backgroundColor=array1[4];
+        document.getElementById("pink").style.backgroundColor=array1[5];
+    },3000);
+
+</script>
 </body>
 </html>
